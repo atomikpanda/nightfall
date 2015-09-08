@@ -1,0 +1,9 @@
+Package: com.baileyseymour.nightfall
+Name: Nightfall
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Bailey Seymour
+Author: Bailey Seymour
+Section: Tweaks
