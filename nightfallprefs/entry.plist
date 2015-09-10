@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = NightfallPrefs;
+	cell = PSLinkCell;
+	detail = NightfallPrefsListController;
+	icon = NightfallPrefs.png;
+	isController = 1;
+	label = NightfallPrefs;
+    };
+}

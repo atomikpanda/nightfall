@@ -1,0 +1,12 @@
+#import "nightfall.h"
+#import "Messages.xm"
+
+__attribute__((constructor))
+static void init_nightfall()
+{
+	kManager = [NFManager sharedInstance];
+	kBundleIdentifier = [NSBundle mainBundle].bundleIdentifier;
+
+	if ([kBundleIdentifier isEqualToString:@"com.apple.MobileSMS"])
+		%init(Messages)
+}
