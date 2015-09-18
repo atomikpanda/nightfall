@@ -12,13 +12,17 @@
     if (!sharedInstance_)
     {
       sharedInstance_ = [[NFManager alloc] init];
-
-      NSMutableDictionary *pdict = [NSMutableDictionary dictionaryWithContentsOfFile:@"/User/Library/Preferences/com.baileyseymour.nightfall.plist"];
-      sharedInstance_.preferences = pdict ? pdict : [NSMutableDictionary dictionary];
+      [sharedInstance_ _reloadPrefs];
     }
 
     return sharedInstance_;
   }
+}
+
+- (void)_reloadPrefs
+{
+  NSMutableDictionary *pdict = [NSMutableDictionary dictionaryWithContentsOfFile:@"/User/Library/Preferences/com.baileyseymour.nightfall.plist"];
+  self.preferences = pdict ? pdict : [NSMutableDictionary dictionary];
 }
 
 - (BOOL)fwVersionIsEqualOrHigherThan:(NSString *)version

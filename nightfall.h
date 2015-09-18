@@ -5,6 +5,7 @@
 
 @interface NFManager : NSObject
 + (NFManager *)sharedInstance;
+- (void)_reloadPrefs;
 - (BOOL)tweakEnabled;
 - (UIColor *)darkColor;
 - (BOOL)usesAccentColor;
