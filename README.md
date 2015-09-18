@@ -8,7 +8,7 @@ Dark mode for individual apps. Not like UIColors, Eclipse, or Nightmode. Specifi
 * If you don't know what your doing or what `-release` and `-retain` do then just stick to being a user ;P
 * Don't write "hacky" code.
 * Use modern objective-c (don't use `#define str @""`, but use `NSString *const str = @"";`
-* Write each app extension in a different .xm file so it organized.
+* Write each app extension in a different .xm file so it's organized.
 * Any other questions contact me ([@atomikpanda](http://twitter.com/atomikpanda) on twitter).
 
 ---
