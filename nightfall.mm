@@ -1,11 +1,7 @@
 #import "nightfall.h"
 
 @implementation NFManager
-
-- (NSMutableDictionary *)_preferences
-{
-  return nil;
-}
+@synthesize preferences;
 
 + (NFManager *)sharedInstance
 {
@@ -16,6 +12,9 @@
     if (!sharedInstance_)
     {
       sharedInstance_ = [[NFManager alloc] init];
+
+      NSMutableDictionary *pdict = [NSMutableDictionary dictionaryWithContentsOfFile:@"/User/Library/Preferences/com.baileyseymour.nightfall.plist"];
+      sharedInstance_.preferences = pdict ? pdict : [NSMutableDictionary dictionary];
     }
 
     return sharedInstance_;
@@ -39,17 +38,17 @@
 
 - (UIColor *)darkColor
 {
-  return [UIColor colorWithHue:0 saturation:0 brightness:0.125 alpha:1];
+  return LCPParseColorString([preferences objectForKey:@"darkColor"], @"#1a1a1a");
 }
 
 - (BOOL)usesAccentColor
 {
-  return NO;
+  return YES;
 }
 
 - (UIColor *)accentColor
 {
-  return [UIColor colorWithHue:0.214 saturation:0.978 brightness:0.894 alpha:1];
+  return LCPParseColorString([preferences objectForKey:@"accentColor"], @"#d14926");
 }
 
 - (UIColor *)lightTextColor
@@ -60,6 +59,13 @@
 - (UIColor *)midTextColor
 {
   return [UIColor lightGrayColor];
+}
+
+- (void)dealloc
+{
+  self.preferences = nil;
+
+  [super dealloc];
 }
 
 @end

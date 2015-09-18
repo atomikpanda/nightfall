@@ -15,6 +15,8 @@
 - (UIColor *)lightTextColor;
 - (UIColor *)midTextColor;
 
+@property (nonatomic, retain) NSMutableDictionary *preferences;
+
 @end
 
 static NFManager *kManager;
