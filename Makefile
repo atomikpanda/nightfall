@@ -8,6 +8,6 @@ Nightfall_LIBRARIES = colorpicker
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
-	install.exec "killall -9 MobileSMS"
+	install.exec "killall -9 MobileSMS Telegram Instagram"
 SUBPROJECTS += nightfallprefs
 include $(THEOS_MAKE_PATH)/aggregate.mk

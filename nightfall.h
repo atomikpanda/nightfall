@@ -22,3 +22,4 @@
 
 static NFManager *kManager;
 static NSString *kBundleIdentifier;
+static UIImage *colorImageWithColor(UIImage *image, UIColor *color);

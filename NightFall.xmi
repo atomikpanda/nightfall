@@ -1,5 +1,7 @@
 #import "nightfall.h"
 #import "Messages.xm"
+#import "Telegram.xm"
+#import "Instagram.xm"
 
 __attribute__((constructor))
 static void init_nightfall()
@@ -9,4 +11,10 @@ static void init_nightfall()
 
 	if ([kBundleIdentifier isEqualToString:@"com.apple.MobileSMS"])
 		%init(Messages)
+
+	if ([kBundleIdentifier isEqualToString:@"ph.telegra.Telegraph"])
+		%init(Telegram)
+
+	if ([kBundleIdentifier isEqualToString:@"com.burbn.instagram"])
+		%init(Instagram)
 }
